@@ -102,7 +102,7 @@ docs/operations/gitnexus.md
 - Create/modify: `package.json`, `tsconfig.json`, `next.config.ts`, `eslint.config.mjs`, `vitest.config.ts`, `playwright.config.ts`, `.gitignore`, `.env.example`, `src/styles/globals.css`, `src/app/(site)/layout.tsx`, `src/app/(site)/page.tsx`
 - Test: `tests/unit/smoke.test.ts`, `tests/e2e/home.spec.ts`
 
-- [ ] **Step 1: Create the Next.js app skeleton**
+- [x] **Step 1: Create the Next.js app skeleton**
 
 Run from `/Users/level33/lab/rabelorochadv`:
 
@@ -112,7 +112,7 @@ npx create-next-app@latest . --ts --eslint --app --src-dir --import-alias "@/*" 
 
 Expected: project files are created in the existing repository without deleting `docs/superpowers/specs/2026-08-10-rabelorochadv-design.md` or this plan.
 
-- [ ] **Step 2: Install verification dependencies**
+- [x] **Step 2: Install verification dependencies**
 
 Run:
 
@@ -123,7 +123,7 @@ npx playwright install --with-deps chromium
 
 Expected: dependencies installed and `package-lock.json` updated.
 
-- [ ] **Step 3: Set package scripts**
+- [x] **Step 3: Set package scripts**
 
 Modify `package.json` scripts to include:
 
@@ -143,7 +143,7 @@ Modify `package.json` scripts to include:
 }
 ```
 
-- [ ] **Step 4: Add Vitest config**
+- [x] **Step 4: Add Vitest config**
 
 Create `vitest.config.ts`:
 
@@ -167,7 +167,7 @@ export default defineConfig({
 });
 ```
 
-- [ ] **Step 5: Add test setup**
+- [x] **Step 5: Add test setup**
 
 Create `tests/setup.ts`:
 
@@ -175,7 +175,7 @@ Create `tests/setup.ts`:
 import '@testing-library/jest-dom/vitest';
 ```
 
-- [ ] **Step 6: Add a failing smoke test**
+- [x] **Step 6: Add a failing smoke test**
 
 Create `tests/unit/smoke.test.ts`:
 
@@ -189,7 +189,7 @@ describe('project foundation', () => {
 });
 ```
 
-- [ ] **Step 7: Run the smoke test and confirm failure**
+- [x] **Step 7: Run the smoke test and confirm failure**
 
 Run:
 
@@ -199,7 +199,7 @@ npm run test -- tests/unit/smoke.test.ts
 
 Expected: FAIL because `NEXT_PUBLIC_SITE_NAME` is not configured for tests.
 
-- [ ] **Step 8: Add environment defaults for tests**
+- [x] **Step 8: Add environment defaults for tests**
 
 Modify `tests/setup.ts`:
 
@@ -209,7 +209,7 @@ import '@testing-library/jest-dom/vitest';
 process.env.NEXT_PUBLIC_SITE_NAME = 'Rabelo & Rocha Advogados';
 ```
 
-- [ ] **Step 9: Add `.env.example`**
+- [x] **Step 9: Add `.env.example`**
 
 Create `.env.example`:
 
@@ -221,7 +221,7 @@ SESSION_SECRET="replace-with-32-byte-random-secret"
 UPLOAD_DIR="./storage/uploads"
 ```
 
-- [ ] **Step 10: Verify foundation**
+- [x] **Step 10: Verify foundation**
 
 Run:
 
@@ -231,7 +231,9 @@ npm run verify
 
 Expected: typecheck, lint and unit tests pass.
 
-- [ ] **Step 11: Commit foundation**
+- [x] **Step 11: Commit foundation**
+
+Skipped commit because the user did not explicitly request commits for this implementation phase.
 
 Only commit if the user explicitly requested commits for the implementation phase. Otherwise skip commit and report changed files.
 
