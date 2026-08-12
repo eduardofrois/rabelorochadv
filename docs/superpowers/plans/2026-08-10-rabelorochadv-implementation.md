@@ -252,7 +252,7 @@ git commit -m "chore: scaffold next app foundation"
 - Create: `Dockerfile`, `docker-compose.yml`, `docker/Caddyfile`, `docker/scripts/backup-postgres.sh`, `docs/deployment/vps.md`
 - Modify: `.env.example`, `.gitignore`, `README.md`
 
-- [ ] **Step 1: Add Dockerfile**
+- [x] **Step 1: Add Dockerfile**
 
 Create `Dockerfile`:
 
@@ -278,7 +278,7 @@ EXPOSE 3000
 CMD ["node", "server.js"]
 ```
 
-- [ ] **Step 2: Enable standalone output**
+- [x] **Step 2: Enable standalone output**
 
 Modify `next.config.ts`:
 
@@ -295,7 +295,7 @@ const nextConfig: NextConfig = {
 export default nextConfig;
 ```
 
-- [ ] **Step 3: Add Docker Compose**
+- [x] **Step 3: Add Docker Compose**
 
 Create `docker-compose.yml`:
 
@@ -350,7 +350,7 @@ volumes:
   caddy_config:
 ```
 
-- [ ] **Step 4: Add local Caddyfile**
+- [x] **Step 4: Add local Caddyfile**
 
 Create `docker/Caddyfile`:
 
@@ -364,7 +364,7 @@ Create `docker/Caddyfile`:
 }
 ```
 
-- [ ] **Step 5: Add backup script**
+- [x] **Step 5: Add backup script**
 
 Create `docker/scripts/backup-postgres.sh`:
 
@@ -386,7 +386,7 @@ Run:
 chmod +x docker/scripts/backup-postgres.sh
 ```
 
-- [ ] **Step 6: Update `.gitignore`**
+- [x] **Step 6: Update `.gitignore`**
 
 Ensure `.gitignore` includes:
 
@@ -398,7 +398,7 @@ backups/
 .gitnexus/
 ```
 
-- [ ] **Step 7: Validate Docker config**
+- [x] **Step 7: Validate Docker config**
 
 Run:
 
@@ -408,7 +408,7 @@ docker compose config
 
 Expected: valid merged Compose config, no syntax errors.
 
-- [ ] **Step 8: Document VPS deployment**
+- [x] **Step 8: Document VPS deployment**
 
 Create `docs/deployment/vps.md` with:
 
@@ -442,7 +442,7 @@ BACKUP_DIR=./backups ./docker/scripts/backup-postgres.sh
 Redeploy the previous image or Git revision, then run `docker compose up -d --build`.
 ```
 
-- [ ] **Step 9: Verify operations docs and Docker**
+- [x] **Step 9: Verify operations docs and Docker**
 
 Run:
 
