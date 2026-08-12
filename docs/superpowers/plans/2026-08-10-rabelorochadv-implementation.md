@@ -460,7 +460,7 @@ Expected: Compose config valid and backup script executable.
 - Create: `prisma/schema.prisma`, `prisma/seed.ts`, `src/lib/db/client.ts`, `src/features/blog/blog.types.ts`, `src/features/blog/blog.repository.ts`, `src/features/leads/leads.repository.ts`, `src/features/media/media.repository.ts`, `src/features/redirects/redirects.repository.ts`
 - Test: `tests/unit/blog-status.test.ts`
 
-- [ ] **Step 1: Install Prisma and Zod**
+- [x] **Step 1: Install Prisma and Zod**
 
 Run:
 
@@ -469,7 +469,7 @@ npm install @prisma/client zod
 npm install -D prisma tsx
 ```
 
-- [ ] **Step 2: Initialize Prisma**
+- [x] **Step 2: Initialize Prisma**
 
 Run:
 
@@ -479,7 +479,7 @@ npx prisma init
 
 Expected: `prisma/schema.prisma` exists.
 
-- [ ] **Step 3: Replace Prisma schema**
+- [x] **Step 3: Replace Prisma schema**
 
 Write `prisma/schema.prisma`:
 
@@ -603,7 +603,7 @@ model Redirect {
 }
 ```
 
-- [ ] **Step 4: Add Prisma client singleton**
+- [x] **Step 4: Add Prisma client singleton**
 
 Create `src/lib/db/client.ts`:
 
@@ -623,7 +623,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 ```
 
-- [ ] **Step 5: Add blog status helper test**
+- [x] **Step 5: Add blog status helper test**
 
 Create `tests/unit/blog-status.test.ts`:
 
@@ -641,7 +641,7 @@ describe('blog status visibility', () => {
 });
 ```
 
-- [ ] **Step 6: Run test and confirm failure**
+- [x] **Step 6: Run test and confirm failure**
 
 Run:
 
@@ -651,7 +651,7 @@ npm run test -- tests/unit/blog-status.test.ts
 
 Expected: FAIL because `src/features/blog/blog.types.ts` does not exist.
 
-- [ ] **Step 7: Add blog types**
+- [x] **Step 7: Add blog types**
 
 Create `src/features/blog/blog.types.ts`:
 
@@ -665,7 +665,11 @@ export function isPublicPostStatus(status: PostStatus): boolean {
 }
 ```
 
-- [ ] **Step 8: Validate Prisma schema and tests**
+- [x] **Step 8: Validate Prisma schema and tests**
+
+Implementation note: Prisma was pinned to the 6.x line because Prisma 7 removes
+`url` from schema datasource blocks and requires a different adapter-based
+client setup than the approved Task 3 plan.
 
 Run:
 
