@@ -4,24 +4,52 @@
   --color-brand: #164245;
   --color-brand-strong: #0f3032;
   --color-ink: #000000;
-  --color-muted: #4b5556;
-  --color-paper: #f7f7f4;
-  --color-line: #d8ddda;
+  --color-muted: rgba(0, 0, 0, 0.72);
+  --color-paper: #e5e5e5;
+  --color-paper-soft: #f5f2ec;
+  --color-line: rgba(0, 0, 0, 0.12);
+  --color-surface: rgba(255, 255, 255, 0.56);
+  --color-surface-strong: rgba(255, 255, 255, 0.82);
   --background: var(--color-paper);
   --foreground: var(--color-ink);
+  --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.12);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --font-display: "Cabinet Grotesk", "Avenir Next", "Segoe UI", sans-serif;
   --font-sans: "Cabinet Grotesk", "Inter", "Segoe UI", Arial, sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
+html {
+  color-scheme: light;
+  min-height: 100%;
+}
+
 body {
+  min-height: 100%;
   background: var(--background);
+  background-image:
+    radial-gradient(circle at top left, rgba(22, 66, 69, 0.08), transparent 28%),
+    radial-gradient(circle at top right, rgba(22, 66, 69, 0.05), transparent 22%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.36), transparent 20%);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+main {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.04em;
 }
 
 a {
@@ -31,4 +59,9 @@ a {
 a:focus-visible {
   outline: 2px solid var(--color-brand);
   outline-offset: 4px;
+}
+
+::selection {
+  background: var(--color-brand);
+  color: var(--color-paper);
 }

@@ -1,12 +1,13 @@
 # rabelorochadv
 
-Modernizacao do site institucional da Rabelo & Rocha Advogados em Next.js,
-TypeScript, PostgreSQL e Docker.
+Modern institutional website for Rabelo & Rocha Advogados.
 
 ## Development
 
 ```bash
 npm install
+cp .env.example .env
+docker compose up -d db
 npm run dev
 ```
 
@@ -16,6 +17,12 @@ npm run dev
 npm run verify
 npm run build
 docker compose config
+```
+
+## GitNexus
+
+```bash
+npx gitnexus analyze
 ```
 
 ## Local Operations
